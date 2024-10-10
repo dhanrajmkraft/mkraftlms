@@ -1,9 +1,14 @@
 <?php
+
+// Load the environment variables from the .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 class ChatBot {
     private $authorization;
     private $endpoint;
     public function __construct() {
-        $this->authorization = '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';
+        $this->authorization = $_ENV['OPENAI_API_KEY'];
         $this->endpoint = 'https://api.openai.com/v1/chat/completions';
     }
     public function sendMessage(string $message): string  {
