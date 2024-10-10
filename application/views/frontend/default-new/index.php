@@ -1,7 +1,7 @@
 <?php
 
 // Include Composer's autoloader
-require_once '/Applications/XAMPP/xamppfiles/htdocs/mkraft/vendor/autoload.php';
+require_once '/var/www/html/vendor/autoload.php';
 
 // Load the environment variables from the .env file
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);

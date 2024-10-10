@@ -1,9 +1,12 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 // Function to call OpenAI API
 function callOpenAI($message) {
-    $apiKey = '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'; // Replace with your OpenAI API Key
+    $apiKey = $_ENV['OPENAI_API_KEY']; // Replace with your OpenAI API Key
     $endpoint = 'https://api.openai.com/v1/chat/completions';
 
     $data = [
