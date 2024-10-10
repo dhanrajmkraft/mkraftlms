@@ -19,3 +19,8 @@
 /fuel/app/logs/*/*/*
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
+
+# costom files
+application/views/frontend/default-new/.env
+uploads/install.sql
+application/views/frontend/default-new/index-1.php
