@@ -76,6 +76,22 @@
                                             </div>
                                         </div>
 
+                                        - Institute Name*
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="institute_name"><?php echo get_phrase('institute_name'); ?><span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="institute_name" name="institute_name" required>
+                                            </div>
+                                        </div>
+
+                                        - Pursuing*
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="pursuing"><?php echo get_phrase('pursuing'); ?><span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="pursuing" name="pursuing" required>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group row mb-3">
                                             <label class="col-md-3 col-form-label" for="phone"><?php echo get_phrase('Phone'); ?></label>
                                             <div class="col-md-9">
@@ -89,7 +105,7 @@
                                                 <input type="text" class="form-control" id="address" name="address">
                                             </div>
                                         </div>
-                                        
+
                                         <div class="form-group row mb-3">
                                             <label class="col-md-3 col-form-label" for="user_image"><?php echo get_phrase('user_image'); ?></label>
                                             <div class="col-md-9">

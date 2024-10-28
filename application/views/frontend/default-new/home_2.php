@@ -19,7 +19,7 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
                     <?php
-                        $banner_title = site_phrase(get_frontend_settings('banner_title'));
+                        $banner_title = (get_frontend_settings('banner_title'));
                         $banner_title_arr = explode(' ', $banner_title);
                     ?>
                     <h1>

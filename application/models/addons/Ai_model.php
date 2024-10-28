@@ -21,7 +21,7 @@ class Ai_model extends CI_Model
             $prompt = $_POST['keyword'];
             $curlopt_post = ['prompt' => $prompt, 'size' => '512x512', 'n' => $number_of_image_creation];
             $curlopt_post_url = 'https://api.openai.com/v1/images/generations';
-            
+
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $curlopt_post_url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

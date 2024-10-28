@@ -47,7 +47,7 @@ class Email_model extends CI_Model
 
 		$notification = $this->db->where('type', $type)->get('notification_settings')->row_array();
 		foreach(json_decode($notification['user_types'], true) as $user_type){
-			
+
 			//Editable
 			if($user_type == 'admin'){
 				$new_user = $this->db->get_where('users', array('id' => $new_user_id))->row_array();
@@ -87,7 +87,7 @@ class Email_model extends CI_Model
 
 		$notification = $this->db->where('type', $type)->get('notification_settings')->row_array();
 		foreach(json_decode($notification['user_types'], true) as $user_type){
-			
+
 			//Editable
 			if($user_type == 'user'){
 				$query = $this->db->get_where('users', array('email' => $to));

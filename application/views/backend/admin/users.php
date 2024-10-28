@@ -1,11 +1,21 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
-                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo $page_title; ?>
-                    <a href="<?php echo site_url('admin/user_form/add_user_form'); ?>" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_student'); ?></a>
-                </h4>
-            </div> <!-- end card body-->
+        <div class="card-body">
+          <h4 class="page-title">
+              <i class="mdi mdi-apple-keyboard-command title_icon"></i>
+              <?php echo $page_title; ?>
+
+              <a style="margin-left: 10px; margin-right: 10px;" href="<?php echo site_url('admin/user_form/add_user_form'); ?>" class="btn btn-outline-primary btn-rounded alignToTitle">
+                  <i class="mdi mdi-plus"></i><?php echo get_phrase('add_student'); ?>
+              </a>
+
+              <a style="margin-left: 10px; margin-right: 10px;" href="<?php echo site_url('admin/bulk_upload'); ?>" class="btn btn-outline-primary btn-rounded alignToTitle">
+                  <i class="mdi mdi-plus"></i><?php echo get_phrase('bulk_upload'); ?>
+              </a>
+
+          </h4>
+      </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
 </div>

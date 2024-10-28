@@ -23,7 +23,7 @@
                   <i class="mdi mdi-square"></i> <?php echo get_phrase('software_version'); ?>
                   <span class="float-right"><?php echo get_settings('version'); ?></span>
                 </p>
-                <p>
+                <!-- <p>
                   <i class="mdi mdi-square"></i> <?php echo get_phrase('check_update'); ?>
                   <span class="float-right">
                       <a href="https://codecanyon.net/user/creativeitem/portfolio"
@@ -32,7 +32,7 @@
                             <?php echo get_phrase('check_update'); ?>
                       </a>
                   </span>
-                </p>
+                </p> -->
                 <p>
                   <i class="mdi mdi-square"></i> <?php echo get_phrase('php_version'); ?>
                   <span class="float-right"><?php echo phpversion(); ?></span>
@@ -81,21 +81,23 @@
                     <?php endif; ?>
                 </p>
                 <p class="mb-0">
-                  <i class="mdi mdi-square"></i> <?php echo get_phrase('customer_name') ?>
+                  <i class="mdi mdi-square"></i> <?php echo get_phrase('author') ?>
                   <?php if ($application_details['customer_name'] != "invalid"): ?>
-                      <span class="float-right"><?php echo $application_details['customer_name']; ?></span>
+                    <span class="float-right">
+                        <?php echo !empty($application_details['customer_name']) ? 'Dhanraj Dadhich' : ''; ?>
+                    </span>
                   <?php else: ?>
                       <span class="float-right"><span class="badge badge-danger-lighten"><?php echo ucfirst($application_details['customer_name']); ?></span></span>
                   <?php endif; ?>
                 </p>
-                <p style="margin-top: 8px;">
+                <!-- <p style="margin-top: 8px;">
                   <i class="mdi mdi-square"></i> <?php echo get_phrase('get_customer_support'); ?>
                   <span class="float-right"><a href="https://support.creativeitem.com" target="_blank" style="color: #343a40;"> <i class="mdi mdi-telegram"></i> <?php echo get_phrase('customer_support'); ?> </a> </span>
                 </p>
                 <p style="margin-top: 8px;">
                   <i class="mdi mdi-square"></i> <?php echo get_phrase('Our Premium Services'); ?>
                   <span class="float-right"><a href="https://creativeitem.com/services" class="btn btn-warning py-0" target="_blank" style="color: #343a40;"> <?php echo get_phrase('Get Services'); ?> </a> </span>
-                </p>
+                </p> -->
               </div>
             </div>
             <img class="ml-3" src="<?php echo base_url('assets/backend/images/report.svg'); ?>" width="120" alt="Generic placeholder image">

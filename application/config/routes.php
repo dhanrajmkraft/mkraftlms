@@ -94,4 +94,14 @@ $route['schedules_bookings/(:any)'] = "addons/tutor_booking/tutor_details/$1";
 $route['my_bookings'] = "addons/tutor_booking/booked_schedules_student";
 //End tutor booking
 
+//Custom URL Start from here
+$route['feedback'] = 'feedback/index';
+// $route['admin/bulk_upload'] = 'UserImport/upload_excel';
+$route['admin/user/bulk_upload'] = 'User_import/upload_excel';
+
+$route['test/email'] = 'email';
+//Custom end Start from here
+
+
 $route['translate_uri_dashes'] = FALSE;
+

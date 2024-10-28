@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-auto">
-                    <nav  aria-label="breadcrumb">
+                    <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
                                 <a href="<?php echo site_url(); ?>">

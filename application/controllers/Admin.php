@@ -3304,4 +3304,18 @@ class Admin extends CI_Controller
             $this->load->view('backend/admin/change_course_author', $page_data);
         }
     }
+
+    public function bulk_upload($action = '')
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+
+        // CHECK ACCESS PERMISSION
+        check_permission('theme');
+
+        $page_data['page_name']  = 'bulk_upload';
+        $page_data['page_title'] = get_phrase('bulk_upload');
+        $this->load->view('backend/index', $page_data);
+    }
 }

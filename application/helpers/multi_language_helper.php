@@ -94,7 +94,8 @@ if (!function_exists('get_phrase')) {
             $language_code = $CI->db->get_where('settings', array('key' => 'language'))->row()->value;
         }
 
-        $key = strtolower(preg_replace('/\s+/', '_', $phrase));
+        // $key = strtolower(preg_replace('/\s+/', '_', $phrase));
+        $key = (preg_replace('/\s+/', '_', $phrase));
 
         /**LANGUAGE HANDLING USING DATABASE**/
         // CHECK IF A COLUMN EXISTS IN LANGUAGE TABLE
@@ -139,7 +140,8 @@ if ( ! function_exists('api_phrase'))
         $CI->load->dbforge();
         $language_code = $CI->db->get_where('settings', array('key' => 'language'))->row()->value;
 
-        $key = strtolower(preg_replace('/\s+/', '_', $phrase));
+        // $key = strtolower(preg_replace('/\s+/', '_', $phrase));
+        $key = (preg_replace('/\s+/', '_', $phrase));
 
         /**LANGUAGE HANDLING USING DATABASE**/
         // CHECK IF A COLUMN EXISTS IN LANGUAGE TABLE
@@ -187,7 +189,8 @@ if (!function_exists('site_phrase')) {
             $CI->session->set_userdata('language', 'english');
         }
         $language_code = $CI->session->userdata('language');
-        $key = strtolower(preg_replace('/\s+/', '_', $phrase));
+        // $key = strtolower(preg_replace('/\s+/', '_', $phrase));
+        $key = (preg_replace('/\s+/', '_', $phrase));
 
         /**LANGUAGE HANDLING USING DATABASE**/
         // CHECK IF A COLUMN EXISTS IN LANGUAGE TABLE

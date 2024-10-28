@@ -738,17 +738,79 @@ $('#headerSearchBarLg').on('keyup', function () {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInputDropdown = document.querySelector('.search-input-form button.btn.dropdown-toggle');
 
+  // Check if the element exists
+  if (searchInputDropdown) {
+    searchInputDropdown.addEventListener('show.bs.dropdown', event => {
+      setTimeout(function(){
+        $('#headerSearchBarLg').focus(); // Focus on the search bar
+        var headerSearchBarLg = $('#headerSearchBarLg')[0];
+        var textLength = headerSearchBarLg.value.length;
 
-
-const searchInputDropdown = document.querySelector('.search-input-form button.btn.dropdown-toggle')
-searchInputDropdown.addEventListener('show.bs.dropdown', event => {
-  setTimeout(function(){
-    $('#headerSearchBarLg').focus();
-    var headerSearchBarLg = $('#headerSearchBarLg')[0];
-    var textLength = headerSearchBarLg.value.length;
-    // Set the selection range to the end of the text
-    headerSearchBarLg.setSelectionRange(textLength, textLength);
-  }, 200);
+        // Set the selection range to the end of the text
+        headerSearchBarLg.setSelectionRange(textLength, textLength);
+      }, 200);
+    });
+  } else {
+    // console.error('Dropdown element not found'); // Log an error if the element is missing
+  }
 });
+
 //End header search bar
+
+//Start Feedback form Star rating
+document.addEventListener('DOMContentLoaded', function () {
+  const stars = document.querySelectorAll('.star');
+  const ratingInput = document.getElementById('overall_rating');
+  
+  let ratingValue = parseFloat(ratingInput.value);
+
+  // Function to set the star rating (full and half stars)
+  function setRating(rating) {
+      ratingValue = rating;
+      ratingInput.value = ratingValue * 2; // Storing as 2 points per star
+
+      stars.forEach(star => {
+          const starValue = parseFloat(star.getAttribute('data-value'));
+          
+          // Full star
+          if (starValue <= rating) {
+              star.classList.add('full');
+              star.classList.remove('half');
+          } 
+          // Half star
+          else if (starValue - 0.5 === rating) {
+              star.classList.add('half');
+              star.classList.remove('full');
+          } 
+          // Empty star
+          else {
+              star.classList.remove('full', 'half');
+          }
+      });
+  }
+
+  // Handle star click events
+  stars.forEach(star => {
+      star.addEventListener('click', function (e) {
+          const rect = star.getBoundingClientRect();
+          const clickPosition = e.clientX - rect.left;
+          const starWidth = rect.width;
+
+          // Full star click
+          if (clickPosition > starWidth / 2) {
+              setRating(parseFloat(star.getAttribute('data-value')));
+          } 
+          // Half star click
+          else {
+              setRating(parseFloat(star.getAttribute('data-value')) - 0.5);
+          }
+      });
+  });
+
+  // Initialize with default value
+  setRating(ratingValue / 2); // Dividing by 2 because each star counts as 2 points
+});
+//End Feedback form Star rating

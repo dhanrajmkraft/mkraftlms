@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('xmlrpc', 'pagination');
+$autoload['libraries'] = array('xmlrpc', 'pagination', 'database', 'session', 'form_validation');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('user_model', 'crud_model', 'video_model', 'email_model', 'payment_model', 'lazyloaddata_model' => 'lazyload', 'api_model', 'addon_model', 'social_login_modal', 'academy_cloud_model');
+$autoload['model'] = array('user_model', 'crud_model', 'video_model', 'email_model', 'payment_model', 'lazyloaddata_model' => 'lazyload', 'api_model', 'addon_model', 'social_login_modal', 'academy_cloud_model', 'feedback_model');
